@@ -1,6 +1,6 @@
 package es.urjccode.mastercloudapps.adcs.draughts.models;
 
-public class Piece implements Cloneable {
+public abstract class Piece implements Cloneable {
 
 	private Color color;
 	private static final int MAX_DISTANCE = 2;

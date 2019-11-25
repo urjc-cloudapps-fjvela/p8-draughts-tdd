@@ -59,8 +59,8 @@ class GameBuilder {
 
     private void initBoardPieces() {
         boardPieces = new HashMap<Integer, Piece>();
-        boardPieces.put((int) 'b', new Piece(Color.WHITE));
-        boardPieces.put((int) 'n', new Piece(Color.BLACK));
+        boardPieces.put((int) 'b', new Pawns(Color.WHITE));
+        boardPieces.put((int) 'n', new Pawns(Color.BLACK));
         boardPieces.put((int) 'B', new Draught(Color.WHITE));
         boardPieces.put((int) 'N', new Draught(Color.BLACK));
     }
