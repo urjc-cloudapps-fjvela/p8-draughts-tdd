@@ -5,7 +5,7 @@ import java.util.List;
 
 class Board implements PieceProvider {
 
-    private static final int DIMENSION = 8;
+    static final int DIMENSION = 8;
     private Square[][] squares;
 
     Board() {

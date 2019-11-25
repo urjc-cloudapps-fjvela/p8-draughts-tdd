@@ -19,6 +19,17 @@ public class Game {
 		}
 	}
 
+	public Game(Board board) {
+		this.board = board;
+		this.turn = new Turn();
+	}
+
+	public Game(Board board, Turn turn) {
+		this.board = board;
+		this.turn = turn;
+	}
+
+
 	private Piece getInitialPiece(Coordinate coordinate) {
 		assert coordinate != null;
 		if (coordinate.isBlack()) {
@@ -42,14 +53,14 @@ public class Game {
 			this.board.remove(origin.betweenDiagonal(target));
 		}
 		this.board.move(origin, target);
-		if (this.board.getPiece(target).isLimit(target)){
+		if (this.board.getPiece(target).isLimit(target)) {
 			this.board.remove(target);
 			this.board.put(target, new Draught(Color.WHITE));
 		}
 		this.turn.change();
 	}
 
-	public Error isCorrect(Coordinate origin, Coordinate target){
+	public Error isCorrect(Coordinate origin, Coordinate target) {
 		assert origin != null;
 		assert target != null;
 		if (board.isEmpty(origin)) {
