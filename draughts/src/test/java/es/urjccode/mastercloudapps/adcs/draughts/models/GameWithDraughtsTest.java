@@ -21,7 +21,7 @@ public class GameWithDraughtsTest {
     }
 
     @Test
-    public void testGivenGameWhenWhitePawnAtLimitThenNewDraugts() {
+    public void testGivenGameWhenWhitePawnAtLimitThenNewDraugts()  {
 
         Coordinate origin = new Coordinate(1, 0);
         Coordinate target = new Coordinate(0, 1);
@@ -36,7 +36,7 @@ public class GameWithDraughtsTest {
     }
 
     @Test
-    public void testGivenGameWhenPawnAtLimitAndEatingThenNewDraugts() {
+    public void testGivenGameWhenPawnAtLimitAndEatingThenNewDraugts()  {
         Coordinate origin = new Coordinate(2, 1);
         Coordinate target = new Coordinate(0, 3);
 
@@ -52,7 +52,7 @@ public class GameWithDraughtsTest {
     }
 
     @Test
-    public void testGivenGameWhenBlackPawnAtLimitThenNewDraugts() {
+    public void testGivenGameWhenBlackPawnAtLimitThenNewDraugts()  {
 
         Coordinate origin = new Coordinate(6,3);
         Coordinate target = new Coordinate(7,2);
@@ -65,5 +65,20 @@ public class GameWithDraughtsTest {
         Piece draught = game.getPiece(target);
         assertNull(game.getPiece(origin));
         assertTrue(draught instanceof Draught);
+    }
+
+    @Test 
+    public void testGivenGameWhenWhiteDraughtsMove() {
+        Coordinate origin = new Coordinate(0, 1);
+
+        Coordinate target = new Coordinate(1, 0);
+
+        Game game = new GameBuilder().addRow(0, " B      ").build();
+
+        game.move(origin, target);
+
+        Piece draught = game.getPiece(target);
+        assertNull(game.getPiece(origin));
+        assertTrue(draught instanceof Draught);  
     }
 }
