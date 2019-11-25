@@ -11,4 +11,10 @@ class Draught extends Piece {
         return true;
     }
 
+    @Override
+    Error isCorrectCustom(Coordinate origin, Coordinate target, PieceProvider pieceProvider) {
+ 
+		return null;
+    }
+
 }
