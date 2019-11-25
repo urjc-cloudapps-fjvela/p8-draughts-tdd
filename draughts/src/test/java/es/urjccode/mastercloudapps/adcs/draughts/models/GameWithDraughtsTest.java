@@ -81,4 +81,20 @@ public class GameWithDraughtsTest {
         assertNull(game.getPiece(origin));
         assertTrue(draught instanceof Draught);  
     }
+
+    @Test 
+    public void testGivenGameWhenBlackDraughtsMove() {
+        Coordinate origin = new Coordinate(7,2);
+        Coordinate target = new Coordinate(6,3);
+
+        when(turn.getColor()).thenReturn(Color.BLACK);
+
+        Game game = new GameBuilder(turn).addRow(7, "  N     ").build();
+
+        game.move(origin, target);
+
+        Piece draught = game.getPiece(target);
+        assertNull(game.getPiece(origin));
+        assertTrue(draught instanceof Draught);  
+    }
 }
